@@ -85,6 +85,8 @@ GitHub風のスタイルにしたい場合、次のようにします。
 
 ※1 https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.css
 
+また、本リポジトリ内にも編集済みの [github-markdown.css](https://github.com/led-mirage/Markdown-PDF-Guide/blob/main/github-markdown.css) を用意しましたので、よかったらご利用ください。
+
 #### 1-3-2. 改ページ
 
 改ページしたい個所で以下のタグを挿入します。
