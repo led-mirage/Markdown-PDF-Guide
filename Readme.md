@@ -85,9 +85,9 @@ GitHub風のスタイルにしたい場合、次のようにします。
 
 ※1 https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.css
 
-#### 1-3-2. 改行
+#### 1-3-2. 改ページ
 
-改行したい個所で以下のタグを挿入します。
+改ページしたい個所で以下のタグを挿入します。
 
 ```html
 <div class="page"/>
@@ -188,9 +188,9 @@ css: |-
 
 <div class="page"/>
 
-#### 2-3-2. 改行
+#### 2-3-2. 改ページ
 
-改行したい個所で以下のタグを挿入します。
+改ページしたい個所で以下のタグを挿入します。
 
 ```html
 <div class="page-break"></div>
