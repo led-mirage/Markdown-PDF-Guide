@@ -1,7 +1,7 @@
 # MarkdownをPDFにする方法
 
 Created on September 10, 2023  
-Updated on September 10, 2023  
+Updated on September 11, 2023  
 Copyright (c) 2023 led-mirage  
 
 ## はじめに
@@ -60,9 +60,19 @@ Visual Studio Code の Marketplace で `markdown pdf` と検索すると、先�
 
 #### 1-3-1. スタイル
 
-ヘッダー、フッターなどのスタイルの設定は拡張機能の設定画面から行えます。
+ヘッダー、フッターなどのスタイルの設定は拡張機能の設定画面から行えます。拡張機能の設定は、各拡張機能の右下の歯車アイコンをクリックし、「拡張機能の設定」を選択することで表示できます。
 
-より詳細なスタイルは CSS ファイルを追加することで調整可能です。CSS ファイル名を github-markdown.css にした場合、.vscode/settings.json ファイルに以下のような記述を追加します。
+より詳細なスタイルは CSS ファイルを追加することで調整可能です。例えばGitHub風のスタイルにしたい場合、次の手順を実行します。
+
+1. [ここ※1](https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.css)から CSS をダウンロードし、github-markdown.css ファイルに保存する（ファイル名は任意）
+2. ファイル中の ".markdown-" という文字列をすべて削除する（空文字で置換）
+3. "white-space: pre;" を "white-space: pre-wrap;" に変更する（変更しないとプログラムコードが途中で途切れる）
+4. 拡張機能の設定画面で、`Include Default Styles` のチェックを外す
+5. 拡張機能の設定画面で、`Styles` に作成した CSS ファイルのパスを追加するする
+
+※1 https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.css
+
+拡張機能の設定はグローバルかワークスペース内に保存でき、ワークスペースの場合は `.vscode/settings.json` に次のような設定が保存されます。
 
 ```json
 {
@@ -70,20 +80,8 @@ Visual Studio Code の Marketplace で `markdown pdf` と検索すると、先�
     "markdown-pdf.styles": [
         "./github-markdown.css"
     ],
-    "markdown-pdf.margin.bottom": "2cm",
-    "markdown-pdf.margin.top": "2cm",
 }
 ```
-
-GitHub風のスタイルにしたい場合、次のようにします。
-
-1. [ここ※1](https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.css)から CSS をダウンロードし、github-markdown.css ファイルに保存する
-2. ファイル中の ".markdown-" という文字列をすべて削除する（空文字で置換）
-3. "white-space: pre;" を "white-space: pre-wrap;" に変更する（変更しないとプログラムコードが途中で途切れる）
-
-この方法はネットを検索すると出てくるので、それらを参考にしてください。
-
-※1 https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.css
 
 また、本リポジトリ内にも編集済みの [github-markdown.css](https://github.com/led-mirage/Markdown-PDF-Guide/blob/main/github-markdown.css) を用意しましたので、よかったらご利用ください。
 
